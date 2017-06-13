@@ -3,6 +3,8 @@ package mashazavolnyuk.daggertutorial.module;
 import android.app.Activity;
 import android.content.Context;
 
+import javax.inject.Singleton;
+
 import dagger.Module;
 import dagger.Provides;
 

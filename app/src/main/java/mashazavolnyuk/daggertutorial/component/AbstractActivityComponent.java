@@ -2,6 +2,8 @@ package mashazavolnyuk.daggertutorial.component;
 
 import android.app.Activity;
 
+import javax.inject.Singleton;
+
 import dagger.Component;
 import mashazavolnyuk.daggertutorial.AppComponent;
 import mashazavolnyuk.daggertutorial.module.ActivityModule;

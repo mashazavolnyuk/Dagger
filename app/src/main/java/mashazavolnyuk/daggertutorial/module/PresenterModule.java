@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
@@ -17,13 +18,12 @@ public class PresenterModule {
 
     private Activity context;
 
-    @Inject
     public PresenterModule(Activity context){
         this.context = context;
     }
 
     @Provides
-    MainPresenter provideNetworkUtils() {
+    MainPresenter providePresenter() {
         return new MainPresenter(context);
     }
 }

@@ -22,11 +22,7 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        DaggerMainComponent.builder().
-                appComponent(App.getComponent()).
-                activityModule(new ActivityModule(this)).
-                presenterModule(new PresenterModule(this)).
-                build().inject(this);
+
     }
 
 }

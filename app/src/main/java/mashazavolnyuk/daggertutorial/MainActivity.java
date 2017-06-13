@@ -15,6 +15,9 @@ import javax.inject.Inject;
 import javax.inject.Provider;
 
 import dagger.Lazy;
+import mashazavolnyuk.daggertutorial.component.DaggerMainComponent;
+import mashazavolnyuk.daggertutorial.module.ActivityModule;
+import mashazavolnyuk.daggertutorial.module.PresenterModule;
 import mashazavolnyuk.daggertutorial.presenter.MainPresenter;
 
 public class MainActivity extends BaseActivity {
@@ -25,6 +28,12 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        DaggerMainComponent.builder().
+                appComponent(App.getComponent()).
+                presenterModule(new PresenterModule(this)).
+                build().inject(this);
+
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
